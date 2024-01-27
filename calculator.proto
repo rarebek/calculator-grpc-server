@@ -1,0 +1,45 @@
+syntax = "proto3";
+option go_package=".";
+
+service Calculator{
+  rpc Add(AddRequest) returns (AddResponse);
+  rpc Subtract(SubtractRequest) returns (SubtractResponse);
+  rpc Multiply(MultiplyRequest) returns (MultiplyResponse);
+  rpc Divide(DivideRequest) returns (DivideResponse);
+}
+message AddRequest{
+  int64 a = 1;
+  int64 b = 2;
+}
+
+message AddResponse {
+  int64 result = 1;
+}
+
+message SubtractRequest{
+  int64 a = 1;
+  int64 b = 2;
+}
+
+message SubtractResponse{
+  int64 result = 1;
+}
+
+message MultiplyRequest{
+  int64 a = 1;
+  int64 b = 2;
+}
+
+message MultiplyResponse{
+  int64 result = 1;
+}
+
+message DivideRequest{
+  float a = 1;
+  float b = 2;
+}
+
+message DivideResponse{
+  float result = 1;
+}
+
